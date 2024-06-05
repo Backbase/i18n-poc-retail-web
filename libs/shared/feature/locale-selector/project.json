@@ -1,0 +1,28 @@
+{
+  "name": "shared-locale-selector",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/shared/feature/locale-selector/src",
+  "prefix": "bb",
+  "targets": {
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "main": "libs/shared/feature/locale-selector/src/test.ts",
+        "tsConfig": "libs/shared/feature/locale-selector/tsconfig.spec.json",
+        "karmaConfig": "libs/shared/feature/locale-selector/karma.conf.js",
+        "codeCoverage": true
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/shared/feature/locale-selector/src/**/*.ts",
+          "libs/shared/feature/locale-selector/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["scope:shared", "region:agnostic", "type:feature"]
+}

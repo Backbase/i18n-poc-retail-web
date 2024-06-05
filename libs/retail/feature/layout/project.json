@@ -1,0 +1,25 @@
+{
+  "name": "retail-layout",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/retail/feature/layout/src",
+  "prefix": "bb",
+  "targets": {
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "main": "libs/retail/feature/layout/src/test.ts",
+        "tsConfig": "libs/retail/feature/layout/tsconfig.spec.json",
+        "karmaConfig": "libs/retail/feature/layout/karma.conf.js",
+        "codeCoverage": true
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/retail/feature/layout/src/**/*.ts", "libs/retail/feature/layout/src/**/*.html"]
+      }
+    }
+  },
+  "tags": ["scope:retail", "region:agnostic", "type:feature"]
+}

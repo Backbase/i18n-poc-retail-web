@@ -1,0 +1,23 @@
+<div class="user-context-dropdown-menu-item">
+  <bb-locale-selector-ui
+    [dropdownPlacement]="'left'"
+    btnColor="unstyled"
+    (selectLocale)="onSelectLocale($event)"
+    [fullWidth]="true"
+    [showModalOnMobileView]="true"
+  >
+    <ng-template bbLocaleSelectorLabel>
+      <div aria-label="Select language" class="user-context-dropdown-menu-item bb-stack bb-select-context__item">
+        <bb-icon-ui class="bb-stack__item bb-stack__item--spacing-sm" name="language" size="md"></bb-icon-ui>
+        <div
+          class="bb-stack__item"
+          i18n="Language|Click to language label@@locale-selector.label.dropdownSwitchLanguage"
+        >
+          Language ({{ currentLocale }})
+        </div>
+
+        <bb-icon-ui [flipOnRtl]="true" class="bb-stack__item--push-right" name="angle-right" size="md"></bb-icon-ui>
+      </div>
+    </ng-template>
+  </bb-locale-selector-ui>
+</div>

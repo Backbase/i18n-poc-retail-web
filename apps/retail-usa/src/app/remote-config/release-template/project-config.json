@@ -1,0 +1,22 @@
+{
+  "title": "Backbase R&D retail web prototype apps",
+  "name": "backbase-wc3",
+  "applications": [
+    {
+      "title": "Retail Banking Web App",
+      "name": "backbase-wc3",
+      "releases": [
+        {
+          "title": "Retail web release",
+          "description": null,
+          "status": "OK",
+          "version": "1.0.0",
+          "versionNumber": 0,
+          "releasedAt": "2023-07-26T17:18:21Z",
+          "parameters": {},
+          "locales": ["en-US"]
+        }
+      ]
+    }
+  ]
+}

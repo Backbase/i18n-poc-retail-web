@@ -1,0 +1,11 @@
+[
+  {
+    "id": "bb-campaign-space-ang-0",
+    "title": "Top right campaign banner - retail app",
+    "screenId": "index",
+    "screenName": "Account overview 300x250",
+    "responsive": false,
+    "height": 250,
+    "width": 300
+  }
+]

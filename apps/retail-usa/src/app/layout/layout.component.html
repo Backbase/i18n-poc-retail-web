@@ -1,0 +1,15 @@
+<bb-retail-layout [displayNotificationSettingsButton]="displayNotificationSettingsButton$ | async">
+  <bb-navigation-menu></bb-navigation-menu>
+  <div
+    #mainContent
+    tabindex="-1"
+    class="sr-only-focusable"
+    aria-label="Main Content Focus"
+    i18n-aria-label="Main Content Focus aria-label@@bb-layout.main-content.focus-content.aria-label"
+    role="region"
+  ></div>
+  <router-outlet (activate)="onActivate()"></router-outlet>
+  <ng-container *bbIfEntitlements="permissions.canViewRealTimeCommunicationChat">
+    <bb-ewa-rtc-client></bb-ewa-rtc-client>
+  </ng-container>
+</bb-retail-layout>

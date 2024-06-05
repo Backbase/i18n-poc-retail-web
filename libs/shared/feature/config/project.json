@@ -1,0 +1,25 @@
+{
+  "name": "shared-config",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/shared/feature/config/src",
+  "prefix": "bb",
+  "targets": {
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "main": "libs/shared/feature/config/src/test.ts",
+        "tsConfig": "libs/shared/feature/config/tsconfig.spec.json",
+        "karmaConfig": "libs/shared/feature/config/karma.conf.js",
+        "codeCoverage": true
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/shared/feature/config/src/**/*.ts", "libs/shared/feature/config/src/**/*.html"]
+      }
+    }
+  },
+  "tags": ["scope:shared", "region:agnostic", "type:feature"]
+}

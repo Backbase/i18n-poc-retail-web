@@ -1,0 +1,14 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "../dist/out-tsc/tools",
+    "rootDir": ".",
+    "module": "commonjs",
+    "target": "es2020",
+    "lib": ["es2020", "dom"],
+    "types": ["jest", "node"],
+    "importHelpers": false,
+    "downlevelIteration": true
+  },
+  "include": ["**/*.ts"]
+}

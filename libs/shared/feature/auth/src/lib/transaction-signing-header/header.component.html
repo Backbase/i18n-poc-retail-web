@@ -1,0 +1,242 @@
+<!-- eslint-disable @angular-eslint/template/no-any -->
+<ng-container *ngIf="data">
+  <ng-container [ngSwitch]="data.confirmationType">
+    <div *ngSwitchDefault>
+      <ng-container
+        *ngTemplateOutlet="
+          data['counter-party-role'] === 'DEBTOR' ? debitHeaderTmpl : defaultHeaderTmpl;
+          context: { $implicit: data, isEdited: data.confirmationType === confirmationType.EDIT_PAYMENT }
+        "
+      >
+      </ng-container>
+    </div>
+
+    <div *ngSwitchCase="confirmationType.APPROVE_PAYMENT">
+      <bb-header-ui
+        headingType="h2"
+        i18n-heading="
+          Transaction signing modal title for
+          approve-payment@@bb-transaction-signing.custom-header.approve-payment.title"
+        heading="Authorisation"
+      >
+      </bb-header-ui>
+      <div
+        *ngIf="data['counter-party-role'] !== 'DEBTOR'; else debitSubTitle"
+        data-role="ts-modal-subtitle"
+        i18n="
+          Transaction signing modal sub-title for
+          approve-payment@@bb-transaction-signing.custom-header.approve-payment.sub-title"
+      >
+        Payment of
+        <bb-amount-ui [currency]="data.currency" [amount]="data.amount"></bb-amount-ui>
+        to {{ data['counter-party-name'] }}.
+      </div>
+    </div>
+    <div *ngSwitchCase="confirmationType.APPROVE_BATCH" [ngTemplateOutlet]="approveBatch"></div>
+    <div *ngSwitchCase="confirmationType.INITIATE_BATCH" [ngTemplateOutlet]="approveBatch"></div>
+    <div *ngSwitchCase="confirmationType.INITIATE_REVERSAL_BATCH">
+      <bb-header-ui
+        headingType="h2"
+        i18n-heading="
+          Transaction signing modal title for
+          initiate-reversal-batch@@bb-transaction-signing.custom-header.initiate-reversal-batch.title"
+        heading="Authorisation"
+        data-role="initiate-reversal-batch__heading"
+      >
+      </bb-header-ui>
+      <div
+        data-role="ts-modal-subtitle"
+        i18n="
+          Transaction signing modal sub-title for
+          initiate-reversal-batch@@bb-transaction-signing.custom-header.initiate-reversal-batch.sub-title"
+      >
+        Reversal batch of
+        <bb-amount-ui [currency]="data.currency" [amount]="data.totalAmount"></bb-amount-ui>
+        to {data.totalTransactionsCount, plural, =1 {one account} other {multiple accounts}}.
+      </div>
+    </div>
+    <div *ngSwitchCase="confirmationType.UPLOAD_BATCH">
+      <bb-header-ui
+        headingType="h2"
+        i18n-heading="
+          Transaction signing modal title for upload-batch@@bb-transaction-signing.custom-header.upload-batch.title"
+        heading="Authorisation"
+      >
+      </bb-header-ui>
+      <div
+        data-role="ts-modal-subtitle"
+        i18n="
+          Transaction signing modal sub-title for
+          upload-batch@@bb-transaction-signing.custom-header.upload-batch.sub-title"
+      >
+        Batch with a total value of
+        <bb-amount-ui [currency]="data.currency" [amount]="data.totalAmount"></bb-amount-ui>
+        to {{ data.totalTransactionsCount }}
+        {data.totalTransactionsCount, plural, =1 {single account} other {multiple accounts}}.
+      </div>
+    </div>
+    <div *ngSwitchCase="confirmationType.BATCH_UPLOAD_BULK">
+      <ng-container
+        *ngTemplateOutlet="
+          batchUploadBulk;
+          context: {
+            batchAggregations: data.mappedBatchesAggregation
+          }
+        "
+      ></ng-container>
+    </div>
+    <div *ngSwitchCase="confirmationType.BULK_APPROVE_PAYMENTS">
+      <ng-container
+        *ngTemplateOutlet="
+          approveBulkPayments;
+          context: {
+            totalCurrencyAggregations: data.currencyAggrCount,
+            currencyAggregations: data.mappedCurrencyAggregation
+          }
+        "
+      ></ng-container>
+    </div>
+  </ng-container>
+</ng-container>
+
+<ng-template #approveBatch>
+  <bb-header-ui
+    headingType="h2"
+    i18n-heading="
+      Transaction signing modal title for approve-batch@@bb-transaction-signing.custom-header.approve-batch.title"
+    heading="Authorisation"
+  >
+  </bb-header-ui>
+  <div
+    data-role="ts-modal-subtitle"
+    i18n="
+      Transaction signing modal sub-title for
+      approve-batch@@bb-transaction-signing.custom-header.approve-batch.sub-title"
+  >
+    Batch with a total value of<br />
+    <bb-amount-ui [currency]="data.currency" [amount]="data.totalAmount"></bb-amount-ui>
+    to {{ data.totalTransactionsCount }} {data.totalTransactionsCount, plural, =1 {transfer} other {transfers}}
+    (multiple accounts).
+  </div>
+</ng-template>
+
+<ng-template
+  #approveBulkPayments
+  let-totalCurrencyAggregations="totalCurrencyAggregations"
+  let-currencyAggregations="currencyAggregations"
+>
+  <bb-header-ui
+    headingType="h2"
+    i18n-heading="
+      Transaction signing modal title for
+      bulk-payments-approve@@bb-transaction-signing.custom-header.approve-bulk-payments.title"
+    heading="Authorisation"
+    data-role="bulk-payments__heading"
+  >
+  </bb-header-ui>
+  <ul *ngIf="currencyAggregations.length" class="bb-list" data-role="currency-aggregation__list">
+    <li
+      *ngFor="let paymentAggregation of currencyAggregations"
+      data-role="currency-aggregation__list-item"
+      i18n="
+        currency aggregation item for
+        bulk-payments-approve@@bb-transaction-signing.custom-header.approve-bulk-payments.currency-aggregation-item"
+    >
+      {{ paymentAggregation.paymentsAmount }}
+
+      {{ paymentAggregation.paymentsAmount | i18nPlural : { '=1': 'payment', other: 'payments' } }} of
+
+      {{ paymentAggregation.currencyCode }} {{ paymentAggregation.total }} to
+
+      {{ paymentAggregation.counterparty || 'multiple accounts' }}
+    </li>
+  </ul>
+  <div
+    *ngIf="totalCurrencyAggregations > maxDisplayedItems"
+    class="mt-4"
+    i18n="
+      Transaction signing total counter for currency aggregations in bulk-payments-approve
+      flow@@bb-transaction-signing.custom-header.approve-bulk-payments.total"
+    data-role="currency-aggregation__total-counter"
+  >
+    Only able to display {{ maxDisplayedItems }}/{{ totalCurrencyAggregations }} currencies
+  </div>
+</ng-template>
+
+<ng-template #batchUploadBulk let-batchAggregations="batchAggregations">
+  <bb-header-ui
+    headingType="h2"
+    i18n-heading="
+      Transaction signing modal title for
+      upload-bulk-batch@@bb-transaction-signing.custom-header.upload-bulk-batch.title"
+    heading="Authorisation"
+    data-role="batch-upload-bulk__heading"
+  >
+  </bb-header-ui>
+  <ul *ngIf="batchAggregations?.length" class="bb-list" data-role="batch-aggregation__list">
+    <li
+      *ngFor="let batch of $any(batchAggregations | slice : 0 : maxDisplayedItems)"
+      data-role="batch-aggregation__list-item"
+      i18n="
+        Transaction signing batch item for
+        upload-bulk-batch@@bb-transaction-signing.custom-header.upload-bulk-batch.aggregation-item"
+    >
+      Batch file of
+      <bb-amount-ui [currency]="batch.currencyCode" [amount]="batch.totalAmount"></bb-amount-ui>
+      to
+      {{ batch.totalTransactions | i18nPlural : { '=1': 'single account', other: 'multiple accounts' } }}.
+    </li>
+  </ul>
+  <p
+    *ngIf="batchAggregations?.length > maxDisplayedItems"
+    data-role="batches-aggregation__total-counter"
+    class="mt-4"
+    i18n="
+      Transaction signing total counter for
+      upload-bulk-batch@@bb-transaction-signing.custom-header.upload-bulk-batch.total"
+  >
+    Only able to display {{ maxDisplayedItems }}/{{ batchAggregations.length }} batches
+  </p>
+</ng-template>
+
+<ng-template #debitHeaderTmpl let-data let-isEdited="isEdited">
+  <bb-header-ui
+    headingType="h2"
+    [heading]="isEdited ? headerPaymentTitle.debitEditedPayment : headerPaymentTitle.debitPayment"
+  >
+  </bb-header-ui>
+
+  <ng-container *ngTemplateOutlet="debitSubTitle"></ng-container>
+</ng-template>
+
+<ng-template #defaultHeaderTmpl let-data let-isEdited="isEdited">
+  <bb-header-ui
+    headingType="h2"
+    [heading]="isEdited ? headerPaymentTitle.editedPayment : headerPaymentTitle.defaultPayment"
+  >
+  </bb-header-ui>
+
+  <div
+    data-role="ts-modal-subtitle"
+    i18n="
+      Transaction signing modal sub-title for
+      initiate-payment@@bb-transaction-signing.custom-header.initiate-payment.sub-title"
+  >
+    Send
+    <bb-amount-ui [currency]="data.currency" [amount]="data.amount"></bb-amount-ui>
+    to {{ data['counter-party-name'] }}.
+  </div>
+</ng-template>
+
+<ng-template #debitSubTitle>
+  <div
+    data-role="ts-modal-subtitle"
+    i18n="
+      Transaction signing modal sub-title for
+      initiate-payment@@bb-transaction-signing.custom-header.initiate-payment-debit.sub-title"
+  >
+    Receive
+    <bb-amount-ui [currency]="data.currency" [amount]="data.amount"></bb-amount-ui>
+    from {{ data['counter-party-name'] }}.
+  </div>
+</ng-template>
