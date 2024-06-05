@@ -78,6 +78,9 @@ export const APP_INCOME_EXPENSE_ANALYSER_BASE_PATH = new InjectionToken<string>(
 );
 export const APP_USER_BASE_PATH = new InjectionToken<string>('ServicePathsModule::APP_USER_BASE_PATH');
 export const APP_DEVICE_BASE_PATH = new InjectionToken<string>('ServicePathsModule::APP_DEVICE_BASE_PATH');
+export const APP_DEVICE_MANAGEMENT_V2_BASE_PATH = new InjectionToken<string>(
+  'ServicePathsModule::APP_DEVICE_MANAGEMENT_V2_BASE_PATH',
+);
 export const APP_ADDRESS_AUTOCOMPLETE_BASE_PATH = new InjectionToken<string>(
   'ServicePathsModule::APP_ADDRESS_AUTOCOMPLETE_BASE_PATH',
 );
@@ -218,6 +221,10 @@ export const APP_INITIATE_PAYMENT_JOURNEY_BENEFICIARY_VALIDATION_V1_BASE_PATH = 
     },
     {
       provide: APP_DEVICE_BASE_PATH,
+      useValue: `${environment.apiRoot}/device-management-service`,
+    },
+    {
+      provide: APP_DEVICE_MANAGEMENT_V2_BASE_PATH,
       useValue: `${environment.apiRoot}/device-management-service`,
     },
     {

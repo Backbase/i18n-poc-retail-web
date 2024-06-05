@@ -13,6 +13,7 @@ import { StepUpInterceptor } from '@backbase/identity-auth/step-up';
 import { NOTIFICATIONS_BADGE_NOTIFICATIONS_BASE_PATH } from '@backbase/notifications-ang';
 import { RemoteConfigService } from '@backbase/remote-config-ang';
 import { AMOUNT_CONFIG_TOKEN, AmountConfig } from '@backbase/ui-ang/amount';
+import { LOCALE_LIST, LocaleCatalog } from '@backbase/ui-ang/locale-selector';
 import { SharedUserContextInterceptor } from '@backbase/shared/feature/user-context';
 import { initProviders } from '@backbase/shared/util/app-core';
 import { MOCKS_TOKEN } from '@backbase/shared/feature/auth';
@@ -22,9 +23,6 @@ import { appModuleImports } from './app-module-imports';
 import { AppComponent } from './app.component';
 import { RetailAppRemoteConfig } from './remote-config/remote-config';
 import { APP_NOTIFICATIONS_BASE_PATH, ServicePathsModule } from './service-paths.module';
-import { LOCALE_LIST, LocaleCatalog } from '@backbase/ui-ang/locale-selector';
-
-import appInfo from '../../version.json';
 
 export function applicationInitializer(remoteConfig: RemoteConfigService<RetailAppRemoteConfig>) {
   return () => remoteConfig.fetchAndActivate();
@@ -100,7 +98,7 @@ const amountConfig: AmountConfig = {
     },
     {
       provide: APPLICATION_VERSION,
-      useValue: appInfo.version,
+      useValue: environment.calendarVersion,
     },
   ],
   bootstrap: [AppComponent],

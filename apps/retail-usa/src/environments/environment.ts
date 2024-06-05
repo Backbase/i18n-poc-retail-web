@@ -4,7 +4,7 @@
 
 import { AuthConfig } from 'angular-oauth2-oidc';
 import { Environment } from './type';
-import packageJson from '../../../../package.json';
+import appInfo from '../../version.json';
 
 export const environment: Environment = {
   /**
@@ -28,8 +28,8 @@ export const environment: Environment = {
   googleApiKey: '${FE_MAPS_API_KEY}',
   disputeTopicId: '',
   inquireTopicId: '',
-  appVersion: packageJson.version,
-  calendarVersion: packageJson.backbase.appVersion,
+  appVersion: appInfo.version,
+  calendarVersion: appInfo.version,
   accountsUseArrangementViewsApi: false,
   /**
    * @deprecated - once the flag is removed, the dashboard page will become the primary application page

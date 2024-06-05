@@ -4,6 +4,51 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [2024.02.1]
+
+### Fixed
+
+- Replace using `package.json` with `version.json` to get the calendar version of the application.
+
+## [2024.02]
+
+### Fixed
+
+- fixed remote-config tests
+
+### Added
+
+- Include the reusable workflows and related ones with app name within the .github folder in the extracted app
+- Added configuration to prepare for future integration of the newer implementation of Transaction Signing into modelbank.
+
+### Changed
+
+- Bump [@backbase/account-statement-retail-journey-ang](https://backbase.io/developers/angular/libraries/account-statement-retail-journey/5.1.1/index.html) to `5.1.1`
+- Bump [@backbase/contact-manager-journey-ang](https://backbase.io/developers/angular/libraries/contact-manager-journey/4.3.0/index.html) to `4.3.0`
+- Bump [@backbase/manage-statements-retail-journey-ang](https://backbase.io/developers/angular/libraries/manage-statements-retail-journey/3.0.3/index.html) to `3.0.3`
+- Bump [@backbase/identity-auth](https://backbase.io/developers/angular/libraries/identity-auth/3.3.0/changelog.html) to `3.3.0`
+- Bump [@backbase/identity-password-reset-journey](https://backbase.io/developers/angular/libraries/identity-password-reset-journey/3.2.0/changelog.html) to `3.2.0`
+- Bump [@backbase/identity-self-enrollment-journey](https://backbase.io/developers/angular/libraries/identity-self-enrollment-journey/4.2.0/changelog.html) to `4.2.0`
+- Bump [@backbase/identity-self-service-journey-ang](https://backbase.io/developers/angular/libraries/identity-self-service-journey-ang/5.3.0/changelog.html) to `5.3.0`
+- Bump [@backbase/cards-management-journey-angular](https://backbase.io/developers/angular/libraries/cards-management-journey/5.3.0/changelog.html) to `5.3.0`
+- Bump [@backbase/accounts-transactions-journey-ang](https://backbase.io/developers/angular/libraries/accounts-transactions-journey/6.12.0/index.html) to `6.12.0`
+- Bump [@backbase/places-journey-ang](https://backbase.io/developers/angular/libraries/places-journey-ang/4.5.0/index.html) to `4.5.0`
+- Bump [@backbase/credit-score-journey-ang](https://backbase.io/developers/angular/libraries/credit-score-journey-ang/2.5.0/index.html) to `2.5.0`
+- Bump [@backbase/budget-journey-ang](https://backbase.io/developers/angular/libraries/budget-journey-ang/4.1.0/index.html) to `4.1.0`
+- Bump [@backbase/cashflow-journey-ang](https://backbase.io/developers/angular/libraries/cashflow-journey-ang/1.1.0/index.html) to `1.1.0`
+- Bump [@backbase/fi-budget-journey-ang](https://backbase.io/developers/angular/libraries/fi-budget-journey-ang/1.1.0/index.html) to `1.1.0`
+- Bump [@backbase/income-spending-analysis-journey-ang](https://backbase.io/developers/angular/libraries/income-spending-analysis-journey-ang/4.1.0/index.html) to `4.1.0`
+- Bump [@backbase/insights-dashboard-journey-ang](https://backbase.io/developers/angular/libraries/insights-dashboard-journey-ang/1.2.0/index.html) to `1.2.0`
+- Bump [@backbase/manage-pockets-journey-ang](https://backbase.io/developers/angular/libraries/manage-pockets-journey-ang/4.9.0/index.html) to `4.9.0`
+- Bump [@backbase/turnovers-journey-ang](https://backbase.io/developers/angular/libraries/turnovers-journey-ang/4.1.0/index.html) to `4.1.0`
+- Bump [@backbase/billpay-sso-journey-ang](https://backbase.io/developers/angular/libraries/billpay-sso-journey-ang/2.0.1/index.html) to `2.0.1`
+- Bump [@backbase/initiate-payment-journey-ang](https://backbase.io/developers/angular/libraries/ip-ang/4.4.0/changelog.html) to `4.4.0`
+- Bump [@backbase/loans-retail-journey](https://backbase.io/developers/angular/libraries/loans-retail-journey/2.3.0/index.html) to `2.3.0`
+- Bump [@backbase/quick-transfer-journey-ang](https://backbase.io/developers/angular/libraries/quick-transfer-journey/4.2.0/index.html) to `4.2.0`
+- Bump [@backbase/manage-upcoming-and-historical-payments-journey-ang](https://backbase.io/developers/angular/libraries/manage-upcoming-and-historical-payments-journey/4.2.1/index.html) to `4.2.1`
+- Bump [@backbase/connect-external-accounts-journey-ang](https://backbase.io/developers/angular/libraries/connect-external-accounts-journey-ang/4.1.2/changelog.html) to `4.1.2`
+- Bump [@backbase/messages-client-inbox-journey-ang](https://backbase.io/developers/angular/libraries/messages-client-inbox-journey-ang/5.2.0/changelog.html) to `5.2.0`
+
 ## [2024.01]
 
 ### Fixed

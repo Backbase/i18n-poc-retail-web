@@ -72,6 +72,31 @@ When creating a PR:
 > 1. Update the version in package.json file
 > 2. set your git commit message as following: "... bump/0.0.2 ..."
 
+#### Code formatting
+
+When making changes to the codebase, make sure that your code is aligned with the code formatting rules. Run the following command to list files that contain code formatting issues:
+
+```sh
+npm run format:check
+```
+
+If the code is not aligned with the formatting rules, you may see the following output when running the command manually or in the logs of the repository workflows:
+
+```log
+Run npx nx format:check
+apps/<banking-app>/src/styles.scss
+apps/<banking-app>/src/themes/style.scss
+apps/<banking-app>/src/themes/variables/_logo.scss
+apps/<banking-app>/src/themes/variables/_typography.scss
+Error: Process completed with exit code 1.
+```
+
+Run the following command to fix most of the code formatting issues:
+
+```sh
+npm run format
+```
+
 ## Development Setup
 
 ### Accessing BaaS

@@ -13,7 +13,7 @@ export interface AppLevelConfig {
 export function appPaginationTypeMapper<T>(
   mapper: Partial<Record<AppLevelPagination, T>>,
   fallback: T,
-): (pagination: AppLevelPagination) => T {
+): (pagination: AppLevelPagination) => T | undefined {
   return (pagination) => {
     if (mapper[pagination]) {
       return mapper[pagination];

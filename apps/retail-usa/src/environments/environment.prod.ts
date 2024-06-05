@@ -1,7 +1,7 @@
 import { concatUrl } from '@backbase/shared/util/app-core';
 import { AuthConfig } from 'angular-oauth2-oidc';
 import { Environment } from './type';
-import packageJson from '../../../../package.json';
+import appInfo from '../../version.json';
 
 export const environment: Environment = {
   /**
@@ -26,8 +26,8 @@ export const environment: Environment = {
   inquireTopicId: '',
   // set which api will be used in ActionsRetailNotificationPreferencesJourneyBundleModule (actions or engagement)
   localize: true,
-  appVersion: packageJson.version,
-  calendarVersion: packageJson.backbase.appVersion,
+  appVersion: appInfo.version,
+  calendarVersion: appInfo.version,
   accountsUseArrangementViewsApi: String('${ACCOUNTS_USE_ARRANGEMENT_VIEWS_API}').toLowerCase() === 'true',
   dashboardEnabled: true,
 };

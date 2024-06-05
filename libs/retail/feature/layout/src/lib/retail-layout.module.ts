@@ -9,6 +9,7 @@ import { LogoModule } from '@backbase/ui-ang/logo';
 import { UserContextMenuWidgetModule } from '@backbase/user-context-menu-widget-ang';
 import { RetailLayoutComponent } from './retail-layout.component';
 import { SharedLocaleSelectorModule } from '@backbase/shared/feature/locale-selector';
+import { ButtonModule } from '@backbase/ui-ang/button';
 
 @NgModule({
   declarations: [RetailLayoutComponent],
@@ -22,6 +23,7 @@ import { SharedLocaleSelectorModule } from '@backbase/shared/feature/locale-sele
     NotificationsBadgeModule,
     ImpersonationModule,
     SharedLocaleSelectorModule,
+    ButtonModule,
   ],
   exports: [RetailLayoutComponent, LayoutModule, NotificationsBadgeModule],
 })

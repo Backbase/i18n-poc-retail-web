@@ -6,12 +6,14 @@ import {
   SELF_SERVICE_ACCESS_CONTROL_BASE_PATH,
   SELF_SERVICE_ADDRESS_AUTOCOMPLETE_BASE_PATH,
   SELF_SERVICE_DEVICE_BASE_PATH,
+  SELF_SERVICE_DEVICE_MANAGEMENT_V2_BASE_PATH,
   SELF_SERVICE_USER_MANAGER_BASE_PATH,
 } from '@backbase/identity-self-service-journey-ang';
 
 import {
   APP_ACCESS_CONTROL_BASE_PATH,
   APP_DEVICE_BASE_PATH,
+  APP_DEVICE_MANAGEMENT_V2_BASE_PATH,
   APP_USER_BASE_PATH,
   APP_ADDRESS_AUTOCOMPLETE_BASE_PATH,
 } from '../../service-paths.module';
@@ -53,6 +55,10 @@ export function profileConfigProvider(locale: string): DeepPartial<IdentitySelfS
     {
       provide: SELF_SERVICE_DEVICE_BASE_PATH,
       useExisting: APP_DEVICE_BASE_PATH,
+    },
+    {
+      provide: SELF_SERVICE_DEVICE_MANAGEMENT_V2_BASE_PATH,
+      useExisting: APP_DEVICE_MANAGEMENT_V2_BASE_PATH,
     },
     {
       provide: SELF_SERVICE_ADDRESS_AUTOCOMPLETE_BASE_PATH,
