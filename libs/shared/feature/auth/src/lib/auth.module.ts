@@ -27,11 +27,7 @@ import { CustomSessionTimeoutComponent } from './custom-session-timeout/session-
  * This is a temporary workaround for capabilities that has download functionality working only via cookies
  * TODO: remove it as soon as capabilities work with auth header
  */
-const cookiePaths = [
-  '/api/account-statement/client-api/v2/account/statements/download',
-  '/api/transaction-manager/client-api/v2/transactions/export',
-  '/api/loan/client-api/v1/loans',
-];
+const cookiePath = '/api/account-statement/client-api/v2/account/statements/download';
 
 @NgModule({
   declarations: [CustomSessionTimeoutComponent],
@@ -94,9 +90,7 @@ export class AuthModule {
                   // todo: delete when files download works without cookies
                   oAuthService.events.subscribe((authEvent: OAuthEvent) => {
                     if (authEvent.type === 'token_received' || authEvent.type === 'token_refreshed') {
-                      cookiePaths.forEach((path) =>
-                        cookieService.set('Authorization', oAuthService.getAccessToken(), { path }),
-                      );
+                      cookieService.set('Authorization', oAuthService.getAccessToken(), { path: cookiePath });
                     }
                   });
 

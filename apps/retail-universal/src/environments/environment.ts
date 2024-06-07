@@ -3,8 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 import { AuthConfig } from 'angular-oauth2-oidc';
-import { Environment } from './type';
 import appInfo from '../../version.json';
+import { Environment } from './type';
 
 export const environment: Environment = {
   /**
@@ -71,7 +71,4 @@ export const authConfig: (baseUrl: string) => AuthConfig = (_baseUrl = '') => ({
   showDebugInformation: true,
 
   logoutUrl: document.location.origin + '/logout',
-  useSilentRefresh: true,
-  silentRefreshTimeout: 5000,
-  silentRefreshRedirectUri: document.location.origin + '/assets/silent-refresh.htm',
 });

@@ -65,7 +65,4 @@ export const authConfig: (baseUrl: string) => AuthConfig = (_baseUrl = '') => ({
   showDebugInformation: true,
 
   logoutUrl: document.location.origin + '/logout',
-  useSilentRefresh: true,
-  silentRefreshTimeout: 5000,
-  silentRefreshRedirectUri: document.location.origin + '/assets/silent-refresh.htm',
 });

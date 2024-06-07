@@ -11,7 +11,6 @@ import { LayoutComponent } from './layout.component';
 import { NavigationMenuComponent } from './navigation-menu/navigation-menu.component';
 import { ButtonModule } from '@backbase/ui-ang/button';
 import { BadgeCounterModule } from '@backbase/ui-ang/badge-counter';
-import { RtcClientModule } from '@backbase/real-time-communication-journey-ang';
 
 @NgModule({
   imports: [
@@ -23,7 +22,6 @@ import { RtcClientModule } from '@backbase/real-time-communication-journey-ang';
     IconModule,
     NgbDropdownModule,
     EntitlementsModule,
-    RtcClientModule,
     RetailLayoutModule.forRoot(NotificationsCommunication),
   ],
   exports: [LayoutComponent],

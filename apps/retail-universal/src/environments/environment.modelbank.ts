@@ -60,11 +60,5 @@ export const authConfig: (baseUrl: string) => AuthConfig = (locale = '') => ({
 
   showDebugInformation: true,
 
-  useSilentRefresh: true,
-
-  silentRefreshTimeout: 5000,
-
-  silentRefreshRedirectUri: concatUrl(window.location.origin, '${BASE_HREF}', locale, 'assets/silent-refresh.htm'),
-
   logoutUrl: concatUrl(window.location.origin, '${BASE_HREF}', locale, 'logout'),
 });

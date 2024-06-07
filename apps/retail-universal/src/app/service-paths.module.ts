@@ -85,6 +85,8 @@ export const APP_INITIATE_PAYMENT_JOURNEY_BENEFICIARY_VALIDATION_V1_BASE_PATH = 
   'ServicePathsModule::APP_INITIATE_PAYMENT_JOURNEY_BENEFICIARY_VALIDATION_V1_BASE_PATH',
 );
 
+export const APP_DASHBOARD_BASE_PATH = new InjectionToken<string>('ServicePathsModule::APP_DASHBOARD_BASE_PATH');
+
 @NgModule({
   providers: [
     {
@@ -219,6 +221,10 @@ export const APP_INITIATE_PAYMENT_JOURNEY_BENEFICIARY_VALIDATION_V1_BASE_PATH = 
     {
       provide: APP_INITIATE_PAYMENT_JOURNEY_BENEFICIARY_VALIDATION_V1_BASE_PATH,
       useValue: `${environment.apiRoot}/beneficiary-validation-service`,
+    },
+    {
+      provide: APP_DASHBOARD_BASE_PATH,
+      useValue: `${environment.apiRoot}/dashboard`,
     },
   ],
 })

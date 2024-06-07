@@ -10,6 +10,6 @@
   ></div>
   <router-outlet (activate)="onActivate()"></router-outlet>
   <ng-container *bbIfEntitlements="permissions.canViewRealTimeCommunicationChat">
-    <bb-ewa-rtc-client></bb-ewa-rtc-client>
+    <ng-container *ngComponentOutlet="chatPanel | async"></ng-container>
   </ng-container>
 </bb-retail-layout>

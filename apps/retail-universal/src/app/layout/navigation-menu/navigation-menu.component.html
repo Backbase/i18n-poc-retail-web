@@ -145,100 +145,6 @@
       <span class="bb-layout__horizontal-nav-item-description" i18n="@@insights.nav.item.description"> Insights </span>
     </a>
   </li>
-  <!-- Analytics -->
-  <li
-    class="bb-layout__horizontal-nav-item"
-    ngbDropdown
-    #analyticsDropdown="ngbDropdown"
-    bbLayoutNavDropdown
-    #analyticsDropdownState="bbLayoutNavDropdown"
-    *bbIfEntitlements="permissions.canViewTransactionsAnalytics"
-  >
-    <a
-      ngbDropdownToggle
-      class="bb-layout__horizontal-nav-link"
-      href="javascript:;"
-      tabindex="0"
-      [ngClass]="{
-        'bb-layout__horizontal-nav-link--expanded': analyticsDropdown.isOpen() || analyticsDropdownState.isActive
-      }"
-      [attr.aria-expanded]="analyticsDropdown.isOpen()"
-      id="bb-menu-header-button-3"
-      role="button"
-    >
-      <span class="bb-layout__horizontal-nav-item-description" i18n="@@analytics.nav.item.description">Analytics</span>
-      <bb-icon-ui
-        class="bb-layout__horizontal-nav-expand-marker bb-layout__horizontal-nav-expand-marker--vertical"
-        [name]="analyticsDropdown.isOpen() ? 'toggle-up' : 'toggle-down'"
-      ></bb-icon-ui>
-      <bb-icon-ui
-        class="bb-layout__horizontal-nav-expand-marker bb-layout__horizontal-nav-expand-marker--horizontal"
-        name="chevron-right"
-      ></bb-icon-ui>
-    </a>
-    <div
-      ngbDropdownMenu
-      class="bb-layout__horizontal-nav-submenu"
-      role="region"
-      tabindex="-1"
-      aria-labelledby="bb-menu-header-button-3"
-    >
-      <button bbButton class="bb-layout__horizontal-nav-submenu-header" (click)="analyticsDropdown.close()">
-        <bb-icon-ui class="bb-layout__horizontal-nav-submenu--close" name="angle-left" size="lg"></bb-icon-ui>
-        <span class="bb-layout__horizontal-nav-submenu--text" i18n="@@main.menu.nav.submenu.text">Main Menu</span>
-      </button>
-      <ul class="bb-layout__horizontal-nav-column">
-        <li>
-          <a
-            class="bb-layout__horizontal-nav-submenu-link"
-            ngbDropdownItem
-            routerLinkActive="bb-layout__horizontal-nav-submenu-link--active"
-            routerLink="/insights/cashflow"
-            #cashFlowRouterLink="routerLinkActive"
-            [attr.aria-current]="cashFlowRouterLink.isActive ? 'page' : undefined"
-          >
-            <div class="bb-layout__bb-horizontal-nav-submenu-item-label">
-              <div class="bb-layout__bb-horizontal-nav-submenu-title" i18n="@@cash.flow.nav.submenu.title">
-                Cash Flow
-              </div>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a
-            class="bb-layout__horizontal-nav-submenu-link"
-            ngbDropdownItem
-            routerLinkActive="bb-layout__horizontal-nav-submenu-link--active"
-            routerLink="/insights/spending-analysis"
-            #spendingAnalysisRouterLink="routerLinkActive"
-            [attr.aria-current]="spendingAnalysisRouterLink.isActive ? 'page' : undefined"
-          >
-            <div class="bb-layout__bb-horizontal-nav-submenu-item-label">
-              <div class="bb-layout__bb-horizontal-nav-submenu-title" i18n="@@spending.analysis.nav.submenu.title">
-                Spending Analysis
-              </div>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a
-            class="bb-layout__horizontal-nav-submenu-link"
-            ngbDropdownItem
-            routerLinkActive="bb-layout__horizontal-nav-submenu-link--active"
-            routerLink="/insights/income-analysis"
-            #incomeAnalysisRouterLink="routerLinkActive"
-            [attr.aria-current]="incomeAnalysisRouterLink.isActive ? 'page' : undefined"
-          >
-            <div class="bb-layout__bb-horizontal-nav-submenu-item-label">
-              <div class="bb-layout__bb-horizontal-nav-submenu-title" i18n="@@income.analysis.nav.submenu.title">
-                Income Analysis
-              </div>
-            </div>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </li>
   <!-- Self service -->
   <li
     class="bb-layout__horizontal-nav-item"
@@ -439,6 +345,54 @@
             </div>
           </a>
         </li>
+        <li *bbIfEntitlements="permissions.canViewTransactionsAnalytics">
+          <a
+            class="bb-layout__horizontal-nav-submenu-link"
+            ngbDropdownItem
+            routerLinkActive="bb-layout__horizontal-nav-submenu-link--active"
+            routerLink="/insights/cashflow"
+            #cashFlowRouterLink="routerLinkActive"
+            [attr.aria-current]="cashFlowRouterLink.isActive ? 'page' : undefined"
+          >
+            <div class="bb-layout__bb-horizontal-nav-submenu-item-label">
+              <div class="bb-layout__bb-horizontal-nav-submenu-title" i18n="@@cash.flow.nav.submenu.title">
+                Cash Flow
+              </div>
+            </div>
+          </a>
+        </li>
+        <li *bbIfEntitlements="permissions.canViewTransactionsAnalytics">
+          <a
+            class="bb-layout__horizontal-nav-submenu-link"
+            ngbDropdownItem
+            routerLinkActive="bb-layout__horizontal-nav-submenu-link--active"
+            routerLink="/insights/spending-analysis"
+            #spendingAnalysisRouterLink="routerLinkActive"
+            [attr.aria-current]="spendingAnalysisRouterLink.isActive ? 'page' : undefined"
+          >
+            <div class="bb-layout__bb-horizontal-nav-submenu-item-label">
+              <div class="bb-layout__bb-horizontal-nav-submenu-title" i18n="@@spending.analysis.nav.submenu.title">
+                Spending Analysis
+              </div>
+            </div>
+          </a>
+        </li>
+        <li *bbIfEntitlements="permissions.canViewTransactionsAnalytics">
+          <a
+            class="bb-layout__horizontal-nav-submenu-link"
+            ngbDropdownItem
+            routerLinkActive="bb-layout__horizontal-nav-submenu-link--active"
+            routerLink="/insights/income-analysis"
+            #incomeAnalysisRouterLink="routerLinkActive"
+            [attr.aria-current]="incomeAnalysisRouterLink.isActive ? 'page' : undefined"
+          >
+            <div class="bb-layout__bb-horizontal-nav-submenu-item-label">
+              <div class="bb-layout__bb-horizontal-nav-submenu-title" i18n="@@income.analysis.nav.submenu.title">
+                Income Analysis
+              </div>
+            </div>
+          </a>
+        </li>
         <li *bbIfEntitlements="permissions.canViewMessages">
           <a
             class="bb-layout__horizontal-nav-submenu-link"
@@ -455,18 +409,7 @@
         </li>
 
         <li *bbIfEntitlements="permissions.canViewRealTimeCommunicationChat">
-          <a
-            class="bb-layout__horizontal-nav-submenu-link bb-rtc-live-chat-submenu-item"
-            ngbDropdownItem
-            routerLinkActive="bb-layout__horizontal-nav-submenu-link--active"
-            (click)="toggleChatWindow()"
-            #liveChatRouterLink="routerLinkActive"
-            [attr.aria-current]="liveChatRouterLink.isActive ? 'page' : undefined"
-          >
-            <div class="bb-layout__horizontal-nav-submenu-item-label">
-              <div class="bb-layout__horizontal-nav-submenu-title" i18n="@@live-chat.nav.submenu.title">Live Chat</div>
-            </div>
-          </a>
+          <ng-container *ngComponentOutlet="chatPanelLink | async"></ng-container>
         </li>
 
         <li *bbIfEntitlements="permissions.canViewPlaces">

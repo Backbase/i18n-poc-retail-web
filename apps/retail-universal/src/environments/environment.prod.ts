@@ -1,7 +1,7 @@
 import { concatUrl } from '@backbase/shared/util/app-core';
 import { AuthConfig } from 'angular-oauth2-oidc';
-import { Environment } from './type';
 import appInfo from '../../version.json';
+import { Environment } from './type';
 
 export const environment: Environment = {
   /**
@@ -30,6 +30,7 @@ export const environment: Environment = {
   calendarVersion: appInfo.version,
   accountsUseArrangementViewsApi: String('${ACCOUNTS_USE_ARRANGEMENT_VIEWS_API}').toLowerCase() === 'true',
   dashboardEnabled: true,
+  cardProductsModelBankConfigurations: String('${ORDER_NEW_CARD_MODEL_BANK_CONFIGURATION}').toLowerCase() === 'true',
 };
 
 export const authConfig: (baseUrl: string) => AuthConfig = (locale = '') => ({
@@ -58,12 +59,6 @@ export const authConfig: (baseUrl: string) => AuthConfig = (locale = '') => ({
   requireHttps: false,
 
   showDebugInformation: true,
-
-  useSilentRefresh: true,
-
-  silentRefreshTimeout: 5000,
-
-  silentRefreshRedirectUri: concatUrl(window.location.origin, '${BASE_HREF}', locale, 'assets/silent-refresh.htm'),
 
   logoutUrl: concatUrl(window.location.origin, '${BASE_HREF}', locale, 'logout'),
 });

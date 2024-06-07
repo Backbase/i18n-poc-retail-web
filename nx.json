@@ -29,6 +29,7 @@
     },
     "@nx/angular:library": {
       "linter": "eslint",
+      "unitTestRunner": "jest",
       "prefix": "bb",
       "strict": false
     },
@@ -59,6 +60,16 @@
         "default",
         "{workspaceRoot}/.eslintrc.js"
       ]
+    },
+    "@nx/angular:ng-packagr-lite": {
+      "cache": true,
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "production",
+        "^production"
+      ]
     }
   },
   "namedInputs": {
@@ -77,5 +88,6 @@
       "!{projectRoot}/.eslintrc.js"
     ]
   },
+  "plugins": [],
   "defaultProject": "retail-universal"
 }

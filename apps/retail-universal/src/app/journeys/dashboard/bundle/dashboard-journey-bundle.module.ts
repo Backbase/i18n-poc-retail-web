@@ -11,6 +11,8 @@ import {
   LatestTransactionsTileConfig,
   AccountsCommunicationService,
   DashboardJourneyComponent,
+  DASHBOARD_JOURNEY_v1_BASE_PATH,
+  CustomizePageComponent,
 } from '@backbase/dashboard-journey-ang';
 import {
   AccountsTransactionsJourneyModule,
@@ -25,6 +27,7 @@ import {
 import {
   APP_ARRANGEMENT_MANAGER_BASE_PATH,
   APP_CATEGORIES_MANAGEMENT_BASE_PATH,
+  APP_DASHBOARD_BASE_PATH,
   APP_TRANSACTIONS_BASE_PATH,
 } from '../../../service-paths.module';
 import { DashboardAccountsNavigationService } from './dashboard-accounts-navigation.service';
@@ -75,6 +78,11 @@ if (environment.modelbank) {
             path: 'transaction-details',
             component: TransactionDetailsComponent,
           },
+          {
+            path: 'customize',
+            component: CustomizePageComponent,
+            outlet: 'popup',
+          },
         ],
       },
     ]),
@@ -93,6 +101,10 @@ if (environment.modelbank) {
     {
       provide: DashboardJourneyConfigurationToken,
       useValue: DASHBOARD_JOURNEY_CONFIGURATION,
+    },
+    {
+      provide: DASHBOARD_JOURNEY_v1_BASE_PATH,
+      useExisting: APP_DASHBOARD_BASE_PATH,
     },
     {
       provide: DASHBOARD_JOURNEY_TRANSACTIONS_BASE_PATH,

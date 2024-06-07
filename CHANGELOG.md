@@ -4,6 +4,56 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [2024.03-LTS]
+
+### Fixed
+
+- Fallback to `appVersion: 'unknown'` for `RemoteConfigModule` to avoid crashes when `environment.calendarVersion` is missing.
+- RTC journey and twilio dependencies are now lazy-loaded, reducing the initial bundle size significantly.
+
+### Removed
+
+- Cookie usage for file downloads in Loans
+- A11y: remove useless `aria-label` from the skip-to-content button.
+
+### Added
+
+- Add metrics base path to messages journey to track click events on action links in message centre templates.
+- Added configuration for modelbank to use the newer implementation of Transaction Signing
+
+### Changed
+
+- Bump [@backbase/contact-manager-journey-ang](https://backbase.io/developers/angular/libraries/contact-manager-journey/4.4.1/index.html) to `4.4.1`
+- Bump [@backbase/account-statement-retail-journey-ang](https://backbase.io/developers/angular/libraries/account-statement-retail-journey/5.1.2/index.html) to `5.1.2`
+- Bump [@backbase/turnovers-journey-ang](https://backbase.io/developers/angular/libraries/turnovers-journey-ang/4.1.1/changelog.html) to `4.1.1`
+- Bump [@backbase/manage-pockets-journey-ang](https://backbase.io/developers/angular/libraries/manage-pockets-journey-ang/4.10.0/changelog.html) to `4.10.0`
+- Bump [@backbase/insights-dashboard-journey-ang](https://backbase.io/developers/angular/libraries/insights-dashboard-journey-ang/1.2.1/changelog.html) to `1.2.1`
+- Bump [@backbase/income-spending-analysis-journey-ang](https://backbase.io/developers/angular/libraries/income-spending-analysis-journey-ang/4.1.1/changelog.html) to `4.1.1`
+- Bump [@backbase/cashflow-journey-ang](https://backbase.io/developers/angular/libraries/cashflow-journey-ang/1.2.1/changelog.html) to `1.2.1`
+- Bump [@backbase/fi-budget-journey-ang](https://backbase.io/developers/angular/libraries/fi-budget-journey-ang/1.3.1/changelog.html) to `1.3.1`
+- Bump [@backbase/budget-journey-ang](https://backbase.io/developers/angular/libraries/budget-journey-ang/4.1.1/changelog.html) to `4.1.1`
+- Bump [@backbase/places-journey-ang](https://backbase.io/developers/angular/libraries/places-journey-ang/4.5.1/changelog.html) to `4.5.1`
+- Bump [@backbase/identity-auth](https://backbase.io/developers/angular/libraries/identity-auth/3.4.0/changelog.html) to `3.4.0`
+- Bump [@backbase/identity-password-reset-journey](https://backbase.io/developers/angular/libraries/identity-password-reset-journey/3.3.0/changelog.html) to `3.3.0`
+- Bump [@backbase/identity-self-enrollment-journey](https://backbase.io/developers/angular/libraries/identity-self-enrollment-journey/4.3.0/changelog.html) to `4.3.0`
+- Bump [@backbase/identity-self-service-journey-ang](https://backbase.io/developers/angular/libraries/identity-self-service-journey-ang/5.4.0/changelog.html) to `5.4.0`
+- Bump [@backbase/messages-client-inbox-journey-ang](https://backbase.io/developers/angular/libraries/messages-client-inbox-journey-ang/5.4.2/index.html) to `5.4.2`
+- In navigation menu moved Analytics journeys to more section.
+- Bump `@backbase/real-time-communication-journey-ang` to `3.3.0`.
+- Hide the Connected accounts option from the Quick Transfer Journey.
+- Bump [@backbase/retail-notification-preferences-journey-ang](https://backbase.io/developers/angular/libraries/retail-notification-preferences-journey-ang/2.2.0/index.html) to `2.2.0`
+- Bump [@backbase/dashboard-journey-ang](https://backbase.io/developers/angular/libraries/dashboard-journey/2.4.0/index.html) to `2.4.0`
+  - Add customization button that allows users to modify the order of displayed tiles
+- Bump [@backbase/cards-management-journey-ang](https://backbase.io/developers/angular/libraries/cards-management-journey/5.4.0/changelog.html) to `5.4.0`
+- Bump [@backbase/accounts-transactions-journey-ang](https://backbase.io/developers/angular/libraries/accounts-transactions-journey/6.13.0/index.html) to `6.13.0`
+- Bump [@backbase/billpay-sso-journey-ang](https://backbase.io/developers/angular/libraries/billpay-sso-journey-ang/2.1.0/index.html) to `2.1.0`
+- Bump [@backbase/initiate-payment-journey-ang](https://backbase.io/developers/angular/libraries/ip-ang/4.5.1/changelog.html) to `4.5.1`
+- Bump [@backbase/loans-retail-journey](https://backbase.io/developers/angular/libraries/loans-retail-journey/2.4.0/index.html) to `2.4.0`
+- Bump [@backbase/quick-transfer-journey-ang](https://backbase.io/developers/angular/libraries/quick-transfer-journey/4.3.0/index.html) to `4.3.0`
+- Bump [@backbase/manage-upcoming-and-historical-payments-journey-ang](https://backbase.io/developers/angular/libraries/manage-upcoming-and-historical-payments-journey/4.3.0/index.html) to `4.3.0`
+- Bump [@backbase/connect-external-accounts-journey-ang](https://backbase.io/developers/angular/libraries/connect-external-accounts-journey-ang/4.2.0/changelog.html) to `4.2.0`
+- Bump [@backbase/real-time-communication-journey-ang](https://backbase.io/developers/angular/libraries/real-time-communication-journey-ang/3.4.0/index.html) to `3.4.0`
+
 ## [2024.02.1]
 
 ### Fixed
@@ -43,7 +93,7 @@ This project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html
 - Bump [@backbase/quick-transfer-journey-ang](https://backbase.io/developers/angular/libraries/quick-transfer-journey/4.2.0/index.html) to `4.2.0`
 - Bump [@backbase/manage-upcoming-and-historical-payments-journey-ang](https://backbase.io/developers/angular/libraries/manage-upcoming-and-historical-payments-journey/4.2.1/index.html) to `4.2.1`
 - Bump [@backbase/connect-external-accounts-journey-ang](https://backbase.io/developers/angular/libraries/connect-external-accounts-journey-ang/4.1.2/changelog.html) to `4.1.2`
-- Bump [@backbase/messages-client-inbox-journey-ang](https://backbase.io/developers/angular/libraries/messages-client-inbox-journey-ang/5.2.0/changelog.html) to `5.2.0`
+- Bump [@backbase/messages-client-inbox-journey-ang](https://backbase.io/developers/angular/libraries/messages-client-inbox-journey-ang/5.5.1/index.html) to `5.5.1`
 
 ## [2024.01]
 
@@ -53,10 +103,6 @@ This project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html
 - fix incorrect configuration of internal transfer payment type config to allow proper working of the payments journey
 - Bump [@backbase/places-journey-ang](https://backbase.io/developers/angular/libraries/places-journey-ang/4.4.0/index.html) to `4.4.0`
 - Bump [@backbase/credit-score-journey-ang](https://backbase.io/developers/angular/libraries/credit-score-journey-ang/2.4.1/index.html) to `2.4.1`
-
-### Removed
-
-### Deprecated
 
 ### Added
 
@@ -165,8 +211,6 @@ This project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html
 - Remove the deprecated `LoanPaymentJourneyWrapperBundleModule` and its related files:
   - removed: `src/app/journeys/accounts/loans/loan-payments/loan-payment-wrapper-bundle.module.ts`;
   - replaced by: `src/app/journeys/loans/loan-payments/loan-payment-wrapper-bundle.module.ts`.
-
-### Deprecated
 
 ### Added
 

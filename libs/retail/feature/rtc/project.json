@@ -1,0 +1,19 @@
+{
+  "name": "retail-feature-rtc",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/retail/feature/rtc/src",
+  "prefix": "bb",
+  "tags": ["type:feature", "scope:retail", "region:agnostic"],
+  "projectType": "library",
+  "targets": {
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "main": "libs/retail/feature/rtc/src/test.ts",
+        "tsConfig": "libs/retail/feature/rtc/tsconfig.spec.json",
+        "karmaConfig": "libs/retail/feature/rtc/karma.conf.js",
+        "codeCoverage": true
+      }
+    }
+  }
+}

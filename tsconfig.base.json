@@ -17,15 +17,19 @@
     "esModuleInterop": true,
     "paths": {
       "@backbase/*": ["libs/*/index.ts"],
+      "@backbase/business/feature/rtc": ["libs/business/feature/rtc/src/index.ts"],
+      "@backbase/business/update-plugin": ["libs/plugins/business/update-plugin/src/index.ts"],
       "@backbase/retail-e2e": ["libs/retail-e2e/src/index.ts"],
       "@backbase/retail/feature/communication": ["libs/retail/feature/communication/src/index.ts"],
       "@backbase/retail/feature/layout": ["libs/retail/feature/layout/src/index.ts"],
+      "@backbase/retail/feature/rtc": ["libs/retail/feature/rtc/src/index.ts"],
       "@backbase/shared/feature/auth": ["libs/shared/feature/auth/src/index.ts"],
       "@backbase/shared/feature/config": ["libs/shared/feature/config/src/index.ts"],
       "@backbase/shared/feature/locale-selector": ["libs/shared/feature/locale-selector/src/index.ts"],
       "@backbase/shared/feature/routable-modal": ["libs/shared/feature/routable-modal/src/index.ts"],
       "@backbase/shared/feature/user-context": ["libs/shared/feature/user-context/src/index.ts"],
-      "@backbase/shared/util/app-core": ["libs/shared/util/app-core/src/index.ts"]
+      "@backbase/shared/util/app-core": ["libs/shared/util/app-core/src/index.ts"],
+      "@backbase/shared/util/e2e": ["libs/shared/util/e2e/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -14,7 +14,7 @@ import {
 } from '@backbase/identity-auth/impersonation';
 import { USER_BASE_PATH } from '@backbase/user-http-ang';
 import { environment } from '../environments/environment';
-import { REAL_TIME_COMMUNICATION_JOURNEY_BASE_PATH } from '@backbase/real-time-communication-journey-ang';
+import { RTC_V1_BASE_PATH } from '@backbase/rtc-v1-client-ang';
 
 /**
  * Service paths for the individual data modules.
@@ -34,7 +34,7 @@ import { REAL_TIME_COMMUNICATION_JOURNEY_BASE_PATH } from '@backbase/real-time-c
 const dataModulePaths: [InjectionToken<string>, string][] = [
   [ACCESS_CONTROL_BASE_PATH, '/access-control'],
   [USER_BASE_PATH, '/user-manager'],
-  [REAL_TIME_COMMUNICATION_JOURNEY_BASE_PATH, '/rtc'],
+  [RTC_V1_BASE_PATH, '/rtc'],
   [IMPERSONATION_SERVICE_BASE_PATH, '/orchestration'],
   [IMPERSONATION_USER_MANAGER_SERVICE_BASE_PATH, '/user-manager'],
 ];

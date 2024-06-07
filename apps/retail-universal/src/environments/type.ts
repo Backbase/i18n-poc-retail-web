@@ -38,4 +38,9 @@ export interface Environment {
    * Enables Backbase ModelBank-environment-specific features that are disabled otherwise.
    */
   modelbank?: boolean;
+  /**
+   * Enables Cards Management journey to have ModelBank-environment-specific configurations that are not available OOTB otherwise.
+   * This will enable the new card products to have formatted title and description in the UI.
+   */
+  cardProductsModelBankConfigurations?: boolean;
 }

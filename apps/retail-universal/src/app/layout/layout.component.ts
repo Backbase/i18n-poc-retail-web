@@ -8,6 +8,7 @@ import { PERMISSIONS } from '../auth/permissions';
 })
 export class LayoutComponent {
   readonly permissions = PERMISSIONS;
+  readonly chatPanel = import('@backbase/retail/feature/rtc').then((c) => c.ChatPanelContainerComponent);
 
   @ViewChild('mainContent', { read: ElementRef }) mainContent: ElementRef | undefined;
 

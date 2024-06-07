@@ -1,4 +1,5 @@
 import { InjectionToken } from '@angular/core';
+// eslint-disable-next-line @nx/enforce-module-boundaries
 import packageJson from '../../../../../../package.json';
 
 export function versionPrinterFactory() {

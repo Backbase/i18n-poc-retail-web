@@ -4,8 +4,9 @@ import {
   MESSAGES_CLIENT_INBOX_JOURNEY_MESSAGES_BASE_PATH,
   MessagesClientInboxJourneyConfiguration,
   MessagesClientInboxJourneyConfigurationToken,
+  MESSAGES_CLIENT_INBOX_JOURNEY_METRIC_BASE_PATH,
 } from '@backbase/messages-client-inbox-journey-ang';
-import { APP_MESSAGES_BASE_PATH } from '../../service-paths.module';
+import { APP_MESSAGES_BASE_PATH, APP_METRIC_BASE_PATH } from '../../service-paths.module';
 import { APP_CONFIG } from '../../app.config';
 
 const messagesClientInboxJourneyConfiguration: Partial<MessagesClientInboxJourneyConfiguration> = {
@@ -22,6 +23,10 @@ const messagesClientInboxJourneyConfiguration: Partial<MessagesClientInboxJourne
     {
       provide: MESSAGES_CLIENT_INBOX_JOURNEY_MESSAGES_BASE_PATH,
       useExisting: APP_MESSAGES_BASE_PATH,
+    },
+    {
+      provide: MESSAGES_CLIENT_INBOX_JOURNEY_METRIC_BASE_PATH,
+      useExisting: APP_METRIC_BASE_PATH,
     },
   ],
 })

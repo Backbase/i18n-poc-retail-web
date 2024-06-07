@@ -133,3 +133,8 @@ html {
   padding-block-end: 14rem;
   padding-block-start: 0rem;
 }
+
+.bb-customize-dropdown {
+  border: $color-neutral-grey $border-width $border-style;
+  border-radius: $border-radius-sm;
+}

@@ -1,25 +1,22 @@
 <div
   class="bb-layout bb-layout--horizontal-nav"
-  [ngClass]="{
-    'bb-layout--nav-expanded': layoutService.navigationExpanded$ | async,
-    'bb-layout--high-resolution-view': layoutService.isHighResolutionView$ | async
-  }"
+  [class.bb-layout--nav-expanded]="layoutService.navigationExpanded$ | async"
+  [class.bb-layout--high-resolution-view]="layoutService.isHighResolutionView$ | async"
 >
   <!-- Impersonation banner -->
   <bb-impersonation-banner (stopImpersonation)="logout()"></bb-impersonation-banner>
 
   <!-- Skip to content -->
-  <a
-    href=""
+  <button
+    bbButton
+    color="link-text"
+    type="button"
     (click)="focusHandler.skipToContent($event)"
-    aria-label="skip to main content"
     class="bb-layout__skip-to-content"
-    i18n-aria-label="
-      Skip to content|Text to enforce the user to click to put focus on the main content
-      section@@bb-layout.topbar.skip_to_content.button"
+    i18n="Move focus to beginning of content@@bb-layout.topbar.skip_to_content.button"
   >
     Skip to Content
-  </a>
+  </button>
 
   <!-- Topbar Area -->
   <nav

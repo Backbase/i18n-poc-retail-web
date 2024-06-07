@@ -29,7 +29,7 @@ const TRANSACTION_SIGNING_CONFIGURATION: Partial<TransactionSigningConfig> = {
 };
 
 if (environment.modelbank) {
-  TRANSACTION_SIGNING_CONFIGURATION.useLegacyImplementation = true;
+  TRANSACTION_SIGNING_CONFIGURATION.useLegacyImplementation = false;
   TRANSACTION_SIGNING_CONFIGURATION.contactAdvisorPhoneNumber = '01234556677';
 }
 
@@ -52,7 +52,7 @@ export const appModuleImports = [
   EffectsModule.forRoot([]),
   RemoteConfigModule.forRoot({
     appName: remoteConfigProjectDetails.applications[0].name,
-    appVersion: environment.calendarVersion,
+    appVersion: environment.calendarVersion ?? 'unknown',
     defaults: remoteConfigDefaults,
     disabled: false,
     projectName: remoteConfigProjectDetails.name,
