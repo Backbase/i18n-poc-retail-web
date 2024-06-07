@@ -2,17 +2,6 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en-US" datatype="plaintext" original="ng2.template" target-language="en-150">
     <body>
-      <trans-unit id="bb.rtc.conversation.end-voice-call.modal.title" datatype="html">
-        <source>End voice call?</source>
-        <target state="translated">[update#1] Stop the voice call?</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">../../../../libs/communications/rtc/client/feature/conversation/src/lib/call-overlay/layout/actions/call-overlay-actions.component.html</context>
-          <context context-type="linenumber">1</context>
-        </context-group>
-        <note priority="1" from="description">Title text shown for the call end
-      modal</note>
-        <note priority="1" from="meaning">End voice call modal title</note>
-      </trans-unit>
       <trans-unit id="bb-rtc.call-overlay.call-actions.accept-call.aria-label" datatype="html">
         <source>Accept call</source>
         <context-group purpose="location">
