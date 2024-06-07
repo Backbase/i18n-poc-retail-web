@@ -15,7 +15,6 @@
       </trans-unit>
       <trans-unit id="bb-rtc.call-overlay.call-actions.accept-call.aria-label" datatype="html">
         <source>Accept call</source>
-        <target state="translated">[update#1] Accept translated call</target>
         <context-group purpose="location">
           <context context-type="sourcefile">../../../../libs/communications/rtc/client/feature/conversation/src/lib/call-overlay/layout/actions/call-overlay-actions.component.html</context>
           <context context-type="linenumber">1</context>
@@ -25,7 +24,7 @@
       </trans-unit>
       <trans-unit id="bb-rtc.call-overlay.call-actions.decline-call.aria-label" datatype="html">
         <source>Decline call</source>
-        <target state="translated">[update#1] Decline translated call</target>
+        <target state="new">[update#1] Decline translated call</target>
         <context-group purpose="location">
           <context context-type="sourcefile">../../../../libs/communications/rtc/client/feature/conversation/src/lib/call-overlay/layout/actions/call-overlay-actions.component.html</context>
           <context context-type="linenumber">1</context>
