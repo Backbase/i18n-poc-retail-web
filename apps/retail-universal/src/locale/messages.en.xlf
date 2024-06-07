@@ -4,7 +4,7 @@
     <body>
       <trans-unit id="bb.rtc.conversation.end-voice-call.modal.title" datatype="html">
         <source>End voice call?</source>
-        <target state="new">Stop the voice call?</target>
+        <target state="translated">Stop the voice call?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">../../../../libs/communications/rtc/client/feature/conversation/src/lib/call-overlay/layout/actions/call-overlay-actions.component.html</context>
           <context context-type="linenumber">1</context>
