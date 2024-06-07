@@ -13,8 +13,8 @@
     "docker:push": "nx affected --base=origin/${CHANGE_TARGET:-main} --target=push-docker --docker-registry=${CHANGE_DOCKER_REGISTRY:-harbor.backbase.eu/staging} --image-tag=${CHANGE_IMAGE_TAG:-latest}",
     "e2e": "nx affected:e2e --base=origin/${CHANGE_TARGET:-main}",
     "e2e:watch": "npm run e2e -- --watch",
-    "e2e:retail-usa": "nx run retail-usa-e2e:e2e",
-    "e2e-ci:retail-usa": "nx run retail-usa-e2e:e2e-ci",
+    "e2e:retail-universal": "nx run retail-universal-e2e:e2e",
+    "e2e-ci:retail-universal": "nx run retail-universal-e2e:e2e-ci",
     "e2e:wealth:dev": "npx playwright test --config=apps/wealth-app-e2e/playwright.config.ts --project=dev-full-chrome  --retries=2",
     "e2e:wealth:dev:ff": "npx playwright test --config=apps/wealth-app-e2e/playwright.config.ts --project=dev-full-firefox  --retries=2",
     "e2e:wealth:stg": "npx playwright test --config=apps/wealth-app-e2e/playwright.config.ts --project=stg-full-chrome  --retries=2",
@@ -33,7 +33,7 @@
     "test": "nx run-many --all --target=test",
     "test:affected": "nx affected:test --base=origin/${CHANGE_TARGET:-main}",
     "pr": "npm run format && npm run lint && npm run test",
-    "xi18n:retail-usa": "ng extract-i18n retail-usa --output-path=apps/retail-usa/src/locale && xliffmerge --profile=apps/retail-usa/src/xliffmerge.json en es"
+    "xi18n:retail-universal": "ng extract-i18n retail-universal --output-path=apps/retail-universal/src/locale && xliffmerge --profile=apps/retail-universal/src/xliffmerge.json en es"
   },
   "dependencies": {
     "@angular/animations": "~16.2.6",
@@ -50,7 +50,6 @@
     "@backbase/account-statement-retail-journey-ang": "~5.1.1",
     "@backbase/accounts-journey-ang": "~6.9.0",
     "@backbase/accounts-transactions-journey-ang": "~6.12.0",
-    "@backbase/authorized-users-journey-ang": "^4.0.2",
     "@backbase/backbase-theme-retail-preset": "^3.0.1",
     "@backbase/billpay-sso-journey-ang": "~2.0.1",
     "@backbase/budget-journey-ang": "~4.1.0",
@@ -86,7 +85,6 @@
     "@backbase/remote-config-ang": "~4.0.0",
     "@backbase/retail-notification-preferences-journey-ang": "~2.0.0",
     "@backbase/select-context-widget-ang": "~8.1.2",
-    "@backbase/stop-checks-journey-ang": "~5.4.0",
     "@backbase/transactions-journey-ang": "~6.9.0",
     "@backbase/turnovers-journey-ang": "~4.1.0",
     "@backbase/ui-ang": "^10.7.36",

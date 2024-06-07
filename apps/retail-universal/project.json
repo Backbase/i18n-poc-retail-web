@@ -1,0 +1,296 @@
+{
+  "name": "retail-universal",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/retail-universal/src",
+  "prefix": "bb",
+  "i18n": {
+    "locales": {
+      "en-150": "apps/retail-universal/src/locale/messages.en.xlf",
+      "es": "apps/retail-universal/src/locale/messages.es.xlf"
+    }
+  },
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "localize": ["en-150"],
+        "outputPath": "dist/apps/retail-universal",
+        "index": "apps/retail-universal/src/index.html",
+        "main": "apps/retail-universal/src/main.ts",
+        "polyfills": "apps/retail-universal/src/polyfills.ts",
+        "tsConfig": "apps/retail-universal/tsconfig.app.json",
+        "aot": true,
+        "assets": [
+          {
+            "input": "libs/retail/assets/src",
+            "glob": "favicon.ico",
+            "output": "."
+          },
+          {
+            "input": "libs/retail/assets/src/assets",
+            "glob": "**/*",
+            "output": "assets"
+          },
+          {
+            "glob": "**/*",
+            "input": "node_modules/@backbase/budget-journey-ang/assets",
+            "output": "assets/budget-journey"
+          },
+          {
+            "glob": "**/*",
+            "input": "node_modules/@backbase/cards-management-journey-ang/assets",
+            "output": "assets/cards-management-journey"
+          },
+          {
+            "glob": "**/*",
+            "input": "node_modules/@backbase/manage-pockets-journey-ang/assets",
+            "output": "assets/manage-pockets-journey"
+          },
+          {
+            "glob": "**/*",
+            "input": "node_modules/@backbase/initiate-payment-journey-ang/assets/images",
+            "output": "assets/initiate-payment-journey-ang"
+          },
+          {
+            "glob": "**/*",
+            "input": "node_modules/@backbase/places-journey-ang/assets",
+            "output": "assets/bb-places-journey-ang"
+          },
+          {
+            "glob": "**/*",
+            "input": "node_modules/@backbase/quick-transfer-journey-ang/assets",
+            "output": "assets/quick-transfer-journey-ang"
+          },
+          {
+            "glob": "**/*",
+            "input": "node_modules/@backbase/ui-ang/assets/images/flags",
+            "output": "assets/ui-ang/flags"
+          }
+        ],
+        "styles": ["apps/retail-universal/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/retail-universal/src/environments/environment.ts",
+              "with": "apps/retail-universal/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": {
+            "scripts": true,
+            "styles": {
+              "minify": true,
+              "inlineCritical": false
+            },
+            "fonts": true
+          },
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false,
+          "buildOptimizer": true,
+          "baseHref": "${BASE_HREF::-1}",
+          "localize": ["en-150", "es"],
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "2mb",
+              "maximumError": "7mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "6kb",
+              "maximumError": "10kb"
+            }
+          ]
+        },
+        "modelbank": {
+          "fileReplacements": [
+            {
+              "replace": "apps/retail-universal/src/environments/environment.ts",
+              "with": "apps/retail-universal/src/environments/environment.modelbank.ts"
+            }
+          ],
+          "optimization": {
+            "scripts": true,
+            "styles": {
+              "minify": true,
+              "inlineCritical": false
+            },
+            "fonts": true
+          },
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false,
+          "buildOptimizer": true,
+          "baseHref": "${BASE_HREF::-1}",
+          "localize": ["en-150", "es"],
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "2mb",
+              "maximumError": "7mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "6kb",
+              "maximumError": "10kb"
+            }
+          ]
+        },
+        "en-150": {
+          "localize": ["en-150"],
+          "i18nMissingTranslation": "warning"
+        },
+        "es": {
+          "localize": ["es"],
+          "i18nMissingTranslation": "warning"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        },
+        "development-local-env-config": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true,
+          "fileReplacements": [
+            {
+              "replace": "apps/retail-universal/src/environments/environment.ts",
+              "with": "apps/retail-universal/src/environments/environment.local.ts"
+            }
+          ]
+        },
+        "e2e": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true,
+          "fileReplacements": [
+            {
+              "replace": "apps/retail-universal/src/environments/environment.ts",
+              "with": "apps/retail-universal/src/environments/environment.e2e.ts"
+            }
+          ]
+        },
+        "mocks": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true,
+          "fileReplacements": [
+            {
+              "replace": "apps/retail-universal/src/environments/environment.ts",
+              "with": "apps/retail-universal/src/environments/environment.mocks.ts"
+            }
+          ]
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "retail-universal:build:production"
+        },
+        "development": {
+          "browserTarget": "retail-universal:build:development",
+          "proxyConfig": "proxy.env.conf.js"
+        },
+        "development-local-env-config": {
+          "browserTarget": "retail-universal:build:development-local-env-config",
+          "proxyConfig": "proxy.env.conf.js"
+        },
+        "es": {
+          "browserTarget": "retail-universal:build:es",
+          "proxyConfig": "proxy.env.conf.js"
+        },
+        "mocks": {
+          "browserTarget": "retail-universal:build:mocks",
+          "proxyConfig": "proxy.mocks.conf.js"
+        },
+        "e2e": {
+          "browserTarget": "retail-universal:build:e2e",
+          "proxyConfig": "proxy.env.conf.js"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "retail-universal:build"
+      }
+    },
+    "xi18n": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "NODE_OPTIONS=--max-old-space-size=4096 ng extract-i18n retail-universal --output-path=apps/retail-universal/src/locale && xliffmerge --profile=apps/retail-universal/src/xliffmerge.json en es"
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["apps/retail-universal/src/**/*.ts", "apps/retail-universal/src/**/*.html"]
+      }
+    },
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "main": "apps/retail-universal/src/test.ts",
+        "tsConfig": "apps/retail-universal/tsconfig.spec.json",
+        "karmaConfig": "apps/retail-universal/karma.conf.js",
+        "polyfills": "apps/retail-universal/src/polyfills.ts",
+        "styles": [],
+        "scripts": [],
+        "assets": [],
+        "codeCoverage": true,
+        "codeCoverageExclude": [
+          "apps/**/permissions.ts",
+          "apps/**/*.module.ts",
+          "**/environment.ts",
+          "**/routable-modal.routes.ts"
+        ]
+      }
+    },
+    "build-docker": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "docker build -t {args.docker-registry}/retail-universal:{args.image-tag} --build-arg application_name=retail-universal ."
+      }
+    },
+    "push-docker": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "docker push {args.docker-registry}/retail-universal:{args.image-tag}"
+      }
+    },
+    "remove-docker": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "docker rmi {args.docker-registry}/retail-universal:{args.image-tag} --force"
+      }
+    }
+  },
+  "tags": ["scope:retail", "region:universal", "type:app"],
+  "implicitDependencies": ["retail-assets"]
+}

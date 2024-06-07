@@ -50,7 +50,7 @@ To start it, run `npm run mock-server`. The server will start on `http://localho
 Example:
 
 ```bash
-## Retail USA
+## Retail Universal
 npm run mock-server
 ```
 
@@ -122,8 +122,8 @@ Run `nx serve <app-name>` for a dev server. Navigate to http://localhost:4200/. 
 Example:
 
 ```bash
-## Retail Banking USA
-nx serve retail-usa
+## Retail Banking Universal
+nx serve retail-universal
 ```
 
 ### Build
@@ -133,8 +133,8 @@ Run `nx build <app-name>` to build the project. The build artifacts will be stor
 Example:
 
 ```bash
-## Retail Banking USA
-nx build retail-usa
+## Retail Banking Universal
+nx build retail-universal
 ```
 
 ### Build Docker Image
@@ -144,11 +144,11 @@ nx build retail-usa
 ```bash
 ## Prerequisite: Build the app `nx build <app-name>`
 ## Example:
-nx build retail-usa
+nx build retail-universal
 
 ## nx build-docker <app-name> --docker-registry=<your-docker-registry> --image-tag=<tag>
 ## Example:
-nx build-docker retail-usa --docker-registry=harbor.backbase.eu/development/retail-web-app --image-tag=0.0.14
+nx build-docker retail-universal --docker-registry=harbor.backbase.eu/development/retail-web-app --image-tag=0.0.14
 ```
 
 #### For the affected Apps
@@ -189,8 +189,8 @@ Run `nx affected:test` to execute the unit tests affected by a change.
 
 #### Prerequisite
 
-- Update the [proxy.env.conf.js](proxy.env.conf.js) and [ret-ref-local.config.json](apps/retail-usa-e2e/config/ret-ref-local.config.json) file with Baas headers and environment details.
-- Update the [environment.e2e.ts](apps/retail-usa/src/environments/environment.e2e.ts) with Identity URL and realms value.
+- Update the [proxy.env.conf.js](proxy.env.conf.js) and [ret-ref-local.config.json](apps/retail-universal-e2e/config/ret-ref-local.config.json) file with Baas headers and environment details.
+- Update the [environment.e2e.ts](apps/retail-universal/src/environments/environment.e2e.ts) with Identity URL and realms value.
 
 Run `nx e2e <app-name>` to execute the end-to-end
 

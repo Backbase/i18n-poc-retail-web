@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12" *ngIf="remoteConfigParameters.showMaintenanceBanner">
+      <bb-alert-ui
+        modifier="warning"
+        title="Maintenance alert"
+        i18n-title="@@accounts.remote-config-banner.title"
+        dismissible="true"
+        (close)="hideMaintenanceBanner()"
+      >
+        <p i18n="@@accounts.remote-config-banner.text">
+          {{ remoteConfigParameters.maintenanceBannerText }}
+        </p>
+      </bb-alert-ui>
+    </div>
+    <div class="col-md-8">
+      <router-outlet></router-outlet>
+    </div>
+    <div class="col-md-4 pt-5">
+      <div class="mb-4 mt-5">
+        <bb-campaign-space-ang name="bb-campaign-space-ang-0"></bb-campaign-space-ang>
+      </div>
+      <div class="card bb-block--xl">
+        <bb-quick-transfer-journey></bb-quick-transfer-journey>
+      </div>
+      <div class="bb-block--xl">
+        <bb-sidebar-quick-actions [links]="quickActionLinks"></bb-sidebar-quick-actions>
+      </div>
+    </div>
+  </div>
+</div>
