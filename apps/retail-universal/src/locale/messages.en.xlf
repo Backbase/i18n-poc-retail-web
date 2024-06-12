@@ -4,7 +4,7 @@
     <body>
       <trans-unit id="bb.rtc.conversation.end-voice-call.modal.title" datatype="html">
         <source>[updated again] End voice call?</source>
-        <target state="new">[updated again] End voice call?</target>
+        <target state="new">[only target updated] End voice call?</target>
         <note priority="1" from="description">Title text shown for the call end
       modal</note>
         <note priority="1" from="meaning">End voice call modal title</note>
