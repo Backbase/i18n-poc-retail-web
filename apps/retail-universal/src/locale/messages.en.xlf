@@ -3,8 +3,8 @@
   <file source-language="en-US" datatype="plaintext" original="ng2.template" target-language="en">
     <body>
       <trans-unit id="bb.rtc.conversation.end-voice-call.modal.title" datatype="html">
-        <source>[only source updated] End voice call?</source>
-        <target state="new">[only target updated] End voice call?</target>
+        <source>[both updated] End voice call?</source>
+        <target state="new">[both updated] End voice call?</target>
         <note priority="1" from="description">Title text shown for the call end
       modal</note>
         <note priority="1" from="meaning">End voice call modal title</note>
