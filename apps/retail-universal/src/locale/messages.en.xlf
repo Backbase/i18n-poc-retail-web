@@ -3,7 +3,7 @@
   <file source-language="en-US" datatype="plaintext" original="ng2.template" target-language="en">
     <body>
       <trans-unit id="bb.rtc.conversation.end-voice-call.modal.title" datatype="html">
-        <source>End voice call?</source>
+        <source>[source updated] End voice call?</source>
         <target state="new">End voice call?</target>
         <note priority="1" from="description">Title text shown for the call end
       modal</note>
@@ -15,7 +15,7 @@
       </trans-unit>
       <trans-unit id="bb.rtc.conversation.end-voice-call.modal.cancel-text" datatype="html">
         <source>Cancel</source>
-        <target state="new">Cancel</target>
+        <target state="new">[target updated] Cancel</target>
         <context-group purpose="location">
           <context context-type="sourcefile">../../libs/communications/rtc/client/internal/feature/conversation/src/lib/call-overlay/layout/actions/call-overlay-actions.component.html</context>
           <context context-type="linenumber">1</context>
