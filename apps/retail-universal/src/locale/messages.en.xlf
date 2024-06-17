@@ -23,6 +23,16 @@
         <note priority="1" from="description">Cancel button text for the call end modal
       </note>
       </trans-unit>
+      <trans-unit id="bb.rtc.conversation.end-voice-call.modal.confirm-text" datatype="html">
+        <source>End Call</source>
+        <target state="new">End Call</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../libs/communications/rtc/client/internal/feature/conversation/src/lib/call-overlay/layout/actions/call-overlay-actions.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <note priority="1" from="description">End call button text for the call end modal
+      </note>
+      </trans-unit>
       <trans-unit id="bb-rtc.call-overlay.call-actions.accept-call.aria-label" datatype="html">
         <source>Accept</source>
         <target state="new">Accept call</target>
@@ -30,7 +40,7 @@
           </note>
         <context-group purpose="location">
           <context context-type="sourcefile">../../libs/communications/rtc/client/internal/feature/conversation/src/lib/call-overlay/layout/actions/call-overlay-actions.component.html</context>
-          <context context-type=`"linenumber">1</context>
+          <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit>
       <trans-unit id="bb-rtc.call-overlay.call-actions.decline-call.aria-label" datatype="html">
@@ -65,6 +75,16 @@
           <context context-type="linenumber">1</context>
         </context-group>
         <note priority="1" from="description">Voice/video call rejected state message within the agent inbox
+      journey</note>
+      </trans-unit>
+      <trans-unit id="bb-rtc.call-overlay.call-ended-message" datatype="html">
+        <source>Call ended</source>
+        <target state="new">Call ended</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../libs/communications/rtc/client/internal/feature/conversation/src/lib/call-overlay/layout/actions/call-overlay-actions.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <note priority="1" from="description">Voice/video call ended state message within the agent inbox
       journey</note>
       </trans-unit>
     </body>
